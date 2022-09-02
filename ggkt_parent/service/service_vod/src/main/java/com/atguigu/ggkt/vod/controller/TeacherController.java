@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,6 +38,7 @@ import io.swagger.annotations.ApiOperation;
 @Api(tags = "讲师管理接口")
 @RestController
 @RequestMapping("/admin/vod/teacher")
+@CrossOrigin
 public class TeacherController {
 
 	@Autowired
@@ -46,13 +48,6 @@ public class TeacherController {
 	@ApiOperation("查询所有讲师")
 	@GetMapping("/findAll")
 	public Result findAll(){
-		//模拟异常
-		
-		try {
-			int i = 10/0;
-		} catch (Exception e) {
-			throw new GgktException(201,"出现自定义异常");
-		}
 		List<Teacher> list = teacherService.list();
 		return Result.ok(list).message("查询数据成功");
 	}
@@ -135,6 +130,7 @@ public class TeacherController {
 	@ApiOperation(value = "根据id列表删除")
 	@DeleteMapping("batchRemove")
 	public Result batchRemove(@RequestBody List<Long> idList) {
+		
 		teacherService.removeByIds(idList);
 		return Result.ok(null);
 	}
