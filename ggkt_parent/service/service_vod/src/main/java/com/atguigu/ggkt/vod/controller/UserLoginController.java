@@ -11,6 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.atguigu.ggkt.result.Result;
 
+import io.swagger.annotations.Api;
+
+/**
+ * 用户 前端控制器
+ * 
+ * @author prisoner
+ *
+ */
+@Api(tags = "用户登录接口")
 @RestController
 @RequestMapping("/admin/vod/user")
 @CrossOrigin  //跨域实现方式

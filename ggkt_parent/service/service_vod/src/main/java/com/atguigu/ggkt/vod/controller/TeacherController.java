@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.atguigu.ggkt.exception.GgktException;
 import com.atguigu.ggkt.model.vod.Teacher;
 import com.atguigu.ggkt.result.Result;
 import com.atguigu.ggkt.vo.vod.TeacherQueryVo;
@@ -28,12 +27,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 /**
- * <p>
  * 讲师 前端控制器
- * </p>
  *
  * @author prisoner
- * @since 2022-08-23
  */
 @Api(tags = "讲师管理接口")
 @RestController

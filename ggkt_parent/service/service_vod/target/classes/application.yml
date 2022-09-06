@@ -14,7 +14,18 @@ spring:  application:    name: service-vod
   #返回json的全局时间格式
   jackson:    date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-    
+  servlet:    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+
+tencent:
+  cos:
+    file:
+      region: ap-nanjing
+      secretid: AKIDmU3qidMsgKly792kJjxxeDbl3MWT0Qio
+      secretkey: AKLB1mNk3DG8xiLm02ta5ECzd6OUO5gX
+      bucketname: ggkt-prisoner-1313728584
+
 #mybatis日志
 mybatis-plus:  configuration:    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl      
 
